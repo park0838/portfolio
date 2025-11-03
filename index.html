@@ -145,6 +145,54 @@
             overflow: hidden;
         }
 
+        /* 게이밍 그리드 배경 */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+            z-index: 0;
+        }
+
+        /* 움직이는 점 패턴 */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: dotMove 15s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        @keyframes dotMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-30px, -30px);
+            }
+        }
+
         .hero-content {
             text-align: center;
             z-index: 2;
@@ -296,6 +344,18 @@
 
         .stat {
             text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .stat:hover {
+            background: rgba(0,0,0,0.02);
+            transform: translateY(-3px);
+        }
+
+        [data-theme="dark"] .stat:hover {
+            background: rgba(255,255,255,0.05);
         }
 
         .stat-number {
@@ -303,6 +363,11 @@
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.5px;
+            transition: all 0.3s;
+        }
+
+        .stat:hover .stat-number {
+            transform: scale(1.1);
         }
 
         .stat-label {
@@ -329,7 +394,25 @@
             text-align: center;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s;
-            border: 1px solid var(--light-secondary);
+            border: 2px solid var(--light-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .skill-card:hover::after {
+            top: 100%;
         }
 
         [data-theme="dark"] .skill-card {
@@ -338,8 +421,9 @@
         }
 
         .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            border-color: var(--primary);
         }
 
         .skill-icon-wrapper {
@@ -354,6 +438,14 @@
             color: white;
             font-weight: 700;
             font-size: 1.1rem;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card:hover .skill-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .skill-name {
@@ -503,7 +595,24 @@
             padding: 2.5rem;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s;
-            border: 1px solid var(--light-secondary);
+            border: 2px solid var(--light-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .career-card:hover::before {
+            left: 100%;
         }
 
         [data-theme="dark"] .career-card {
@@ -513,7 +622,8 @@
 
         .career-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1);
+            border-color: var(--primary);
         }
 
         .career-icon {
@@ -583,7 +693,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s;
-            border: 1px solid var(--light-secondary);
+            border: 2px solid var(--light-secondary);
         }
 
         [data-theme="dark"] .project-card {
@@ -593,7 +703,8 @@
 
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border-color: var(--primary);
         }
 
         .project-image {
@@ -605,6 +716,22 @@
             font-size: 3rem;
             color: rgba(255,255,255,0.4);
             font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
 
         .project-info {
@@ -673,6 +800,25 @@
         #contact {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+        }
+
+        #contact > * {
+            position: relative;
+            z-index: 1;
         }
 
         #contact .section-title,
