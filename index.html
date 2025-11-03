@@ -936,6 +936,16 @@
             font-size: 0.95rem;
         }
 
+        #refreshTrigger {
+            transition: all 0.3s;
+        }
+
+        #refreshTrigger:hover {
+            opacity: 1;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
         .build-version {
             opacity: 0.4;
             font-size: 0.75rem;
@@ -1590,8 +1600,8 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 박준서. All rights reserved.</p>
-        <p>국제대학교 e스포츠과 | ISTQB CTFL | 평택시 창업경진대회 동상</p>
-        <p class="build-version">Build v1.0.0 • 5b33e83</p>
+        <p id="refreshTrigger" style="cursor: pointer;" title="클릭하여 최신 버전 확인">국제대학교 e스포츠과 | ISTQB CTFL | 평택시 창업경진대회 동상</p>
+        <p class="build-version">Build v1.0.0 • 5b33e83 • <span id="loadTime"></span></p>
     </footer>
 
     <script>
@@ -1649,6 +1659,30 @@
             const item = header.parentElement;
             item.classList.toggle('active');
         }
+
+        // 빌드 버전 확인 기능
+        const refreshTrigger = document.getElementById('refreshTrigger');
+        const loadTimeElement = document.getElementById('loadTime');
+
+        // 페이지 로드 시간 표시
+        function updateLoadTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('ko-KR', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            loadTimeElement.textContent = `Loaded ${timeString}`;
+        }
+
+        // 클릭 시 강제 새로고침 (캐시 무시)
+        refreshTrigger.addEventListener('click', () => {
+            // 캐시를 무시하고 새로고침
+            window.location.reload(true);
+        });
+
+        // 페이지 로드 시 시간 업데이트
+        updateLoadTime();
     </script>
 </body>
 </html>
