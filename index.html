@@ -387,6 +387,136 @@
             background: var(--light);
         }
 
+        /* 핵심 역량 섹션 */
+        #competencies {
+            background: var(--light-gray);
+        }
+
+        .competencies-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .competency-item {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            border: 1px solid var(--light-secondary);
+        }
+
+        [data-theme="dark"] .competency-item {
+            background: var(--dark-secondary);
+            border-color: var(--dark-tertiary);
+        }
+
+        .competency-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .competency-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .competency-header:hover {
+            background: var(--light-gray);
+        }
+
+        [data-theme="dark"] .competency-header:hover {
+            background: var(--dark-tertiary);
+        }
+
+        .competency-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .competency-icon {
+            font-size: 2rem;
+        }
+
+        .competency-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            color: var(--primary);
+        }
+
+        .competency-item.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .competency-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 2rem;
+        }
+
+        .competency-item.active .competency-content {
+            max-height: 1500px;
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .competency-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .competency-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .competency-content strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .future-contribution {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            margin-top: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .future-contribution h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .future-contribution p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .future-contribution p:last-child {
+            margin-bottom: 0;
+        }
+
+        .future-contribution strong {
+            font-weight: 700;
+            opacity: 1;
+        }
+
         .career-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -837,6 +967,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gaming-career">Gaming</a></li>
+                <li><a href="#competencies">Competencies</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -974,6 +1105,102 @@
                             <span class="stat-value">상위 랭크 달성</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 핵심 역량 섹션 -->
+    <section id="competencies">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">경험을 통해 얻은 핵심 역량</p>
+
+            <div class="competencies-container">
+                <div class="competency-item">
+                    <div class="competency-header" onclick="toggleCompetency(this)">
+                        <div class="competency-title-wrapper">
+                            <span class="competency-icon">💻</span>
+                            <h3 class="competency-title">개발자 관점 이해 및 QA의 중요성 깨달음</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="competency-content">
+                        <p>Unity로 게임을 개발하고 다양한 웹 프로젝트를 진행하며 개발의 어려움을 직접 경험했습니다. 특히 그래픽 에셋이 적용되지 않아 화면이 핑크색으로 나타났을 때, 원인을 찾느라 여러 시간을 소비했습니다. 그래픽 파이프라인 설정과 에셋 임포트 과정에 문제가 있었는데, 원인을 파악하고 나니 수정은 금방이었습니다.</p>
+                        <p>이런 경험을 여러 번 겪으며, QA가 결함을 빠르게 찾아내고 검증하는 것이 개발 효율성과 제품 품질에 중요하다는 것을 깨달았습니다. 아무리 해도 버그 원인을 모를 때가 힘들었고, 원인과 해결책을 찾았을 때 즐거웠습니다. 이 경험은 QA가 단순히 버그를 찾는 역할이 아니라 개발 프로세스 전체를 지원하는 핵심 역할이라는 것을 이해하게 해주었습니다. 또한 개발자의 관점에서 생각할 수 있게 되어, QA로서 개발팀과 효과적으로 소통하고 협업할 수 있는 기반이 되었습니다.</p>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header" onclick="toggleCompetency(this)">
+                        <div class="competency-title-wrapper">
+                            <span class="competency-icon">🎯</span>
+                            <h3 class="competency-title">게임 시스템 분석 및 피드백 능력</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="competency-content">
+                        <p><strong>리그 오브 레전드 (7년):</strong> 챔피언별 픽률, 밴률, 승률 데이터를 추적했습니다. 패치노트를 분석해 메타 변화를 예측하고, 라인전 타이밍과 정글 동선을 최적화하는 과정에서 데이터 기반 분석 능력을 키웠습니다.</p>
+                        <p><strong>TFT (2년, 그랜드마스터):</strong> 매 패치마다 변경되는 챔피언 능력치, 아이템 조합, 시너지 시스템을 빠르게 파악하고 최적의 덱 구성을 찾아내는 과정에서 메타 분석 능력을 키웠습니다. 확률 기반 시스템과 경제 관리를 이해하며 게임 밸런스를 깊이 있게 분석했습니다.</p>
+                        <p><strong>이터널리턴 (800시간, 미스릴):</strong> 캐릭터별 승률, 아이템 밸런스, 시즌별 변화를 추적했습니다. 배틀로얄 장르의 복잡한 밸런스 시스템을 이해했습니다.</p>
+                        <p><strong>TCG 게임 2차 알파 테스터:</strong> 게임의 재미와 밸런스를 분석하고 플레이 후 피드백 리포트를 작성했습니다. 플레이어 관점에서 문제를 발견하고 개선점을 제시하는 능력을 키웠습니다.</p>
+                        <p><strong>다양한 장르 경험:</strong> 샌드박스(테라리아, 코어키퍼), 서바이벌(Green Hell), 격투(철권), 시뮬레이션(스타듀밸리) 등을 경험하며 장르별 게임 디자인과 밸런스 방식에 대한 폭넓은 이해를 쌓았습니다.</p>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header" onclick="toggleCompetency(this)">
+                        <div class="competency-title-wrapper">
+                            <span class="competency-icon">🤝</span>
+                            <h3 class="competency-title">체계적인 프로젝트 관리 및 의사소통 능력</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="competency-content">
+                        <p><strong>e스포츠 대회 기획 및 운영:</strong> 규정 수립, 일정 관리, 이슈 대응 등 체계적인 관리 역량을 키웠습니다. 2024년 대회에서는 기획팀장을 맡아 팀원들을 관리하며 전체 프로젝트를 조율했습니다. 팀원들과 의견을 조율하고 명확하게 소통하며 합의점을 찾아가는 경험을 쌓았습니다.</p>
+                        <p><strong>국제 게임 코칭:</strong> 일본어로 외국인 게이머들에게 리그 오브 레전드, 이터널 리턴, TFT 등의 게임 코칭을 제공했습니다. 언어와 문화의 장벽을 넘어 게임 메커니즘과 전략을 설명하고 소통하며 사회성을 길렀습니다.</p>
+                        <p><strong>박람회 및 교육행사:</strong> 다양한 연령대의 방문객을 응대하며 각 대상에 맞춰 설명하는 방법을 배웠고, 현장에서 직접 유저 반응을 관찰하고 피드백을 수집하며 유저 관점에서 문제를 파악하는 능력을 키웠습니다.</p>
+                        <p><strong>e스포츠 방송 해설:</strong> 실시간으로 게임 상황을 분석하고 명확하게 전달하는 능력을 향상시켰습니다.</p>
+                        <p>이러한 경험들은 개발, 운영, 유저 응대 등 게임 산업 전반을 이해하는 넓은 시야와 다양한 배경을 가진 사람들과 효과적으로 의사소통하는 능력을 길러주었습니다.</p>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header" onclick="toggleCompetency(this)">
+                        <div class="competency-title-wrapper">
+                            <span class="competency-icon">⚙️</span>
+                            <h3 class="competency-title">하드웨어 및 소프트웨어에 대한 기술적 이해</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="competency-content">
+                        <p><strong>방송 장비 운영:</strong> OBS, 마이크, 오디오 인터페이스, 스위처, 카메라 등 다양한 방송 장비를 세팅하고 운영했습니다. 장비 간 호환성 문제나 신호 처리 오류가 발생했을 때 원인을 파악하고 해결하는 경험을 쌓았습니다.</p>
+                        <p><strong>소프트웨어 커스터마이징:</strong> 해외 방송 자료를 찾아 학과 방송 환경에 맞게 커스터마이징하며 OBS 플러그인 설정, 오디오, 화면 레이아웃 구성 등을 직접 수정하여 시청 품질을 개선했습니다.</p>
+                        <p><strong>하드웨어 전문성:</strong> 게이밍 기어에 대한 높은 이해도를 바탕으로 컴퓨터 조립, 문제 진단, 수리 경험을 쌓았습니다. 키보드 커스터마이징과 음향기기에 대한 지식도 보유하고 있습니다.</p>
+                        <p><strong>개발 환경 구축:</strong> 게임 개발과 웹 프로젝트를 진행하며 그래픽 카드 설정, 메모리 관리, 빌드 환경 구성 등 개발 환경을 직접 세팅하며 소프트웨어와 하드웨어의 상호작용을 이해했습니다.</p>
+                        <p>이런 경험은 QA 업무에서 테스트 환경을 구축하거나, 하드웨어 관련 버그를 재현하고 분석할 때 도움이 될 것입니다.</p>
+                    </div>
+                </div>
+
+                <div class="competency-item">
+                    <div class="competency-header" onclick="toggleCompetency(this)">
+                        <div class="competency-title-wrapper">
+                            <span class="competency-icon">📜</span>
+                            <h3 class="competency-title">ISTQB CTFL 자격증을 통한 이론적 기반</h3>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="competency-content">
+                        <p>QA로서의 전문성을 체계적으로 쌓기 위해 ISTQB CTFL 자격증을 취득했습니다. 테스트 설계, 버그 리포트 작성, 기능 검증 등 QA의 기본 원칙을 학습하며 이론적 기반을 다졌습니다.</p>
+                        <p>실무 경험과 이론적 지식을 결합하여 체계적이고 효과적인 테스트 전략을 수립할 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="future-contribution">
+                    <h3>🎯 펄어비스에서의 기여 방향</h3>
+                    <p>개발 경험을 통해 QA의 중요성을 깊이 이해하게 되었고, 다양한 활동을 통해 넓은 시야와 사회성을 키웠습니다. 이러한 경험들은 제가 QA로서 게임의 완성도를 높이는 데 실질적으로 기여할 수 있는 역량으로 축적되었습니다.</p>
+                    <p>특히 개발자의 관점을 이해하고 있어 개발팀과 효과적으로 소통하며, 플레이어 관점에서 문제를 발견하고, 명확하게 피드백을 전달할 수 있습니다.</p>
+                    <p><strong>펄어비스에서 이 경험들을 바탕으로 플레이어에게 최고의 플레이 경험을 제공하는 QA가 되겠습니다.</strong></p>
                 </div>
             </div>
         </div>
@@ -1293,6 +1520,12 @@
             event.preventDefault();
             alert('메시지가 전송되었습니다!');
             event.target.reset();
+        }
+
+        // 핵심 역량 아코디언 토글
+        function toggleCompetency(header) {
+            const item = header.parentElement;
+            item.classList.toggle('active');
         }
     </script>
 </body>
