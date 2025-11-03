@@ -376,9 +376,19 @@
             font-weight: 500;
         }
 
-        /* Skills 섹션 */
-        #skills {
+        /* Skills & Competencies 통합 섹션 */
+        #competencies {
             background: var(--light);
+        }
+
+        .competencies-divider {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 4rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-secondary);
         }
 
         .skills-grid {
@@ -482,10 +492,6 @@
             background: var(--light);
         }
 
-        /* 핵심 역량 섹션 */
-        #competencies {
-            background: var(--light-gray);
-        }
 
         .competencies-container {
             max-width: 900px;
@@ -1105,8 +1111,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gaming-career">Gaming</a></li>
-                <li><a href="#competencies">Competencies</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#competencies">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
@@ -1248,12 +1253,66 @@
         </div>
     </section>
 
-    <!-- 핵심 역량 섹션 -->
+    <!-- Skills & Competencies 통합 섹션 -->
     <section id="competencies">
         <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">경험을 통해 얻은 핵심 역량</p>
+            <h2 class="section-title">Skills & Competencies</h2>
+            <p class="section-subtitle">전문 기술 및 핵심 역량</p>
 
+            <!-- Skills Grid -->
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">QA</div>
+                    <div class="skill-name">Game Testing</div>
+                    <div class="skill-description">버그 탐지, 밸런스 테스트</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">LOL</div>
+                    <div class="skill-name">E-Sports</div>
+                    <div class="skill-description">리그오브레전드, 코칭</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">Web</div>
+                    <div class="skill-name">Web Development</div>
+                    <div class="skill-description">HTML, CSS, JavaScript</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">AI</div>
+                    <div class="skill-name">AI Tools</div>
+                    <div class="skill-description">ChatGPT, Claude</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">분석</div>
+                    <div class="skill-name">Game Analysis</div>
+                    <div class="skill-description">메타 분석, 데이터 해석</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 88%;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">창업</div>
+                    <div class="skill-name">Entrepreneurship</div>
+                    <div class="skill-description">비즈니스 기획</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 상세 역량 -->
+            <h3 class="competencies-divider">상세 역량</h3>
             <div class="competencies-container">
                 <div class="competency-item">
                     <div class="competency-header" onclick="toggleCompetency(this)">
@@ -1331,64 +1390,6 @@
                     <div class="competency-content">
                         <p>QA로서의 전문성을 체계적으로 쌓기 위해 ISTQB CTFL 자격증을 취득했습니다. 테스트 설계, 버그 리포트 작성, 기능 검증 등 QA의 기본 원칙을 학습하며 이론적 기반을 다졌습니다.</p>
                         <p>실무 경험과 이론적 지식을 결합하여 체계적이고 효과적인 테스트 전략을 수립할 수 있습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills 섹션 -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">전문 분야 및 역량</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">QA</div>
-                    <div class="skill-name">Game Testing</div>
-                    <div class="skill-description">버그 탐지, 밸런스 테스트</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 95%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">LOL</div>
-                    <div class="skill-name">E-Sports</div>
-                    <div class="skill-description">리그오브레전드, 코칭</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">Web</div>
-                    <div class="skill-name">Web Development</div>
-                    <div class="skill-description">HTML, CSS, JavaScript</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">AI</div>
-                    <div class="skill-name">AI Tools</div>
-                    <div class="skill-description">ChatGPT, Claude</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">분석</div>
-                    <div class="skill-name">Game Analysis</div>
-                    <div class="skill-description">메타 분석, 데이터 해석</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 88%;"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon-wrapper">창업</div>
-                    <div class="skill-name">Entrepreneurship</div>
-                    <div class="skill-description">비즈니스 기획</div>
-                    <div class="skill-level">
-                        <div class="skill-progress" style="width: 70%;"></div>
                     </div>
                 </div>
             </div>
