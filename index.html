@@ -376,6 +376,86 @@
             transition: width 1s ease;
         }
 
+        /* 게임 경력 섹션 */
+        #gaming-career {
+            background: var(--light);
+        }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .career-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            border: 1px solid var(--light-secondary);
+        }
+
+        [data-theme="dark"] .career-card {
+            background: var(--dark-secondary);
+            border-color: var(--dark-tertiary);
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .career-icon {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .career-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .career-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .career-stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--light-secondary);
+        }
+
+        [data-theme="dark"] .career-stat-item {
+            border-bottom-color: var(--dark-tertiary);
+        }
+
+        .career-stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .career-stat-item .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        .career-stat-item .stat-value {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
         /* Projects 섹션 */
         #projects {
             background: var(--light-gray);
@@ -673,6 +753,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             section {
                 padding: 60px 15px;
             }
@@ -700,6 +784,10 @@
             }
 
             .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -742,6 +830,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#gaming-career">Gaming</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -799,6 +888,84 @@
                         <div class="stat">
                             <div class="stat-number">창업대회</div>
                             <div class="stat-label">동상 수상</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 게임 경력 섹션 -->
+    <section id="gaming-career">
+        <div class="container">
+            <h2 class="section-title">Gaming Career</h2>
+            <p class="section-subtitle">PC 게임 경험 및 성과</p>
+            <div class="career-grid">
+                <div class="career-card">
+                    <div class="career-icon">🏆</div>
+                    <h3 class="career-title">리그 오브 레전드</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">플레이 기간</span>
+                            <span class="stat-value">약 7년 (초6~대1)</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">최고 티어</span>
+                            <span class="stat-value">마스터</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">주요 성과</span>
+                            <span class="stat-value">아마추어 대회 다수 참가 및 입상</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">⚔️</div>
+                    <h3 class="career-title">이터널리턴</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">플레이 시간</span>
+                            <span class="stat-value">약 800시간</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">최고 티어</span>
+                            <span class="stat-value">미스릴</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">주요 성과</span>
+                            <span class="stat-value">프리시즌 상위 200위</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">♟️</div>
+                    <h3 class="career-title">TFT (전략적 팀 전투)</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">플레이 기간</span>
+                            <span class="stat-value">약 2년</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">최고 티어</span>
+                            <span class="stat-value">그랜드마스터</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">주요 성과</span>
+                            <span class="stat-value">상위 랭크 달성</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">🃏</div>
+                    <h3 class="career-title">섀도우버스</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">플레이 시간</span>
+                            <span class="stat-value">약 200시간</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">주요 성과</span>
+                            <span class="stat-value">상위 랭크 달성</span>
                         </div>
                     </div>
                 </div>
@@ -996,6 +1163,26 @@
                         </div>
                         <div class="project-links">
                             <a href="https://park0838.github.io/andora-website/" class="project-link" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">08</div>
+                    <div class="project-info">
+                        <h3 class="project-title">스케치퀴즈 (Sketch Quiz)</h3>
+                        <p class="project-description">
+                            실시간 멀티플레이어 그림 맞추기 게임.
+                            P2P 방식으로 최대 6명이 함께 즐기는 그림 퀴즈 게임입니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">WebRTC</span>
+                            <span class="tech-tag">PeerJS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://park0838.github.io/multiplayer-drawing/" class="project-link" target="_blank">Live Demo</a>
+                            <a href="https://github.com/park0838/multiplayer-drawing" class="project-link" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
