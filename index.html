@@ -714,30 +714,11 @@
         }
 
         .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255,255,255,0.4);
-            font-weight: 700;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
             width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-            background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: var(--light-gray);
         }
 
         .project-info {
@@ -1403,7 +1384,7 @@
             <p class="section-subtitle">웹 게임 & 웹사이트 프로젝트</p>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">01</div>
+                    <img src="images/project-01-moonlight-jump.png" alt="Moonlight Jump 게임 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">Moonlight Jump</h3>
                         <p class="project-description">
@@ -1422,7 +1403,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">02</div>
+                    <img src="images/project-02-2048.png" alt="2048 Game 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">2048 Game</h3>
                         <p class="project-description">
@@ -1441,7 +1422,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">03</div>
+                    <img src="images/project-03-qrcode.png" alt="QR Code Generator 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">QR Code Generator</h3>
                         <p class="project-description">
@@ -1460,7 +1441,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">04</div>
+                    <img src="images/project-04-cheongsolhyanggga.png" alt="청솔향 펜션 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">청솔향 펜션</h3>
                         <p class="project-description">
@@ -1478,7 +1459,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">05</div>
+                    <img src="images/project-05-brewing-moment.png" alt="Brewing Moment Cafe 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">Brewing Moment Cafe</h3>
                         <p class="project-description">
@@ -1496,7 +1477,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">06</div>
+                    <img src="images/project-06-prime-hanwoo.png" alt="Prime Hanwoo 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">Prime Hanwoo</h3>
                         <p class="project-description">
@@ -1514,7 +1495,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">07</div>
+                    <img src="images/project-07-andora.png" alt="Andora 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">Andora</h3>
                         <p class="project-description">
@@ -1532,7 +1513,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">08</div>
+                    <img src="images/project-08-sketch-quiz.png" alt="스케치퀴즈 (Sketch Quiz) 스크린샷" class="project-image">
                     <div class="project-info">
                         <h3 class="project-title">스케치퀴즈 (Sketch Quiz)</h3>
                         <p class="project-description">
