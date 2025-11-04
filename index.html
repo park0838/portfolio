@@ -367,7 +367,7 @@
         }
 
         .stat:hover .stat-number {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .stat-label {
@@ -379,16 +379,6 @@
         /* Skills & Competencies 통합 섹션 */
         #competencies {
             background: var(--light);
-        }
-
-        .competencies-divider {
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin: 4rem 0 2rem 0;
-            padding-top: 2rem;
-            border-top: 2px solid var(--light-secondary);
         }
 
         .skills-grid {
@@ -409,21 +399,7 @@
             overflow: hidden;
         }
 
-        .skill-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-
-        .skill-card:hover::after {
-            top: 100%;
-        }
+        /* 단순화: 과도한 애니메이션 제거 */
 
         [data-theme="dark"] .skill-card {
             background: var(--dark-secondary);
@@ -431,8 +407,8 @@
         }
 
         .skill-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
             border-color: var(--primary);
         }
 
@@ -492,103 +468,6 @@
             background: var(--light);
         }
 
-
-        .competencies-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .competency-item {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s;
-            border: 1px solid var(--light-secondary);
-        }
-
-        [data-theme="dark"] .competency-item {
-            background: var(--dark-secondary);
-            border-color: var(--dark-tertiary);
-        }
-
-        .competency-item:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .competency-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .competency-header:hover {
-            background: var(--light-gray);
-        }
-
-        [data-theme="dark"] .competency-header:hover {
-            background: var(--dark-tertiary);
-        }
-
-        .competency-title-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .competency-icon {
-            font-size: 2rem;
-        }
-
-        .competency-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin: 0;
-        }
-
-        .toggle-icon {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-            color: var(--primary);
-        }
-
-        .competency-item.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .competency-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 2rem;
-        }
-
-        .competency-item.active .competency-content {
-            max-height: 1500px;
-            padding: 0 2rem 2rem 2rem;
-        }
-
-        .competency-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .competency-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .competency-content strong {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-
         .career-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -606,20 +485,7 @@
             overflow: hidden;
         }
 
-        .career-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .career-card:hover::before {
-            left: 100%;
-        }
+        /* 단순화: 과도한 슬라이드 애니메이션 제거 */
 
         [data-theme="dark"] .career-card {
             background: var(--dark-secondary);
@@ -627,8 +493,8 @@
         }
 
         .career-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             border-color: var(--primary);
         }
 
@@ -682,6 +548,28 @@
             text-align: right;
         }
 
+        .tier-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .tier-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .tier-link::after {
+            content: ' 🔗';
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
         /* Projects 섹션 */
         #projects {
             background: var(--light-gray);
@@ -708,8 +596,8 @@
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
             border-color: var(--primary);
         }
 
@@ -941,6 +829,66 @@
             color: #888;
         }
 
+        .footer-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .footer-social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: white;
+            transition: all 0.5s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .footer-social-link:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+
+        .footer-social-link:hover {
+            border-color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255,255,255,0.15);
+        }
+
+        .footer-social-link svg {
+            width: 22px;
+            height: 22px;
+            fill: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-social-link:hover svg {
+            fill: var(--primary);
+            transform: scale(1.15);
+        }
+
         /* 모바일 */
         .hamburger {
             display: none;
@@ -1129,13 +1077,9 @@
                 <div class="about-text">
                     <h3>안녕하세요, 박준서입니다</h3>
                     <p>
-                        게임 테스터이자 E-Sports 전문가로서, 게임의 품질과 사용자 경험을 극대화하는 것을 목표로 합니다.
-                        국제대학교 e스포츠과에서 전문 지식을 쌓으며, 실무 경험과 이론을 겸비한 인재로 성장하고 있습니다.
-                    </p>
-                    <p>
-                        ISTQB CTFL 자격증을 보유한 전문 테스터로서 체계적인 테스팅 방법론을 적용하며,
-                        리그 오브 레전드 코칭 경험과 다수의 아마추어 대회 입상 경험을 통해 
-                        게임에 대한 깊은 이해와 분석 능력을 보유하고 있습니다.
+                        게임 테스터 및 E-Sports 전문가로서 게임의 품질과 사용자 경험 향상을 목표로 합니다.
+                        ISTQB CTFL 자격증을 보유하고 있으며, LOL 마스터 티어 달성 및 다수의 대회 입상 경험을 통해
+                        게임 분석과 피드백 능력을 갖추고 있습니다.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -1178,6 +1122,10 @@
                             <span class="stat-label">주요 성과</span>
                             <span class="stat-value">아마추어 대회 다수 참가 및 입상</span>
                         </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">소환사명</span>
+                            <span class="stat-value"><a href="https://www.op.gg/summoners/kr/xparkox" target="_blank" class="tier-link">xparkox</a></span>
+                        </div>
                     </div>
                 </div>
                 <div class="career-card">
@@ -1195,6 +1143,10 @@
                         <div class="career-stat-item">
                             <span class="stat-label">주요 성과</span>
                             <span class="stat-value">프리시즌 상위 200위</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">닉네임</span>
+                            <span class="stat-value"><a href="https://dak.gg/er/players/xparkox" target="_blank" class="tier-link">xparkox</a></span>
                         </div>
                     </div>
                 </div>
@@ -1227,6 +1179,42 @@
                         <div class="career-stat-item">
                             <span class="stat-label">주요 성과</span>
                             <span class="stat-value">상위 랭크 달성</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">🎯</div>
+                    <h3 class="career-title">대회 기획 및 중계</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">대회 기획</span>
+                            <span class="stat-value">교내 e스포츠 대회 다수 기획</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">대회 중계</span>
+                            <span class="stat-value">아마추어 대회 캐스터 및 해설</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">역할</span>
+                            <span class="stat-value">대회 운영, 경기 분석, 실황 중계</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-card">
+                    <div class="career-icon">💻</div>
+                    <h3 class="career-title">웹 개발</h3>
+                    <div class="career-stats">
+                        <div class="career-stat-item">
+                            <span class="stat-label">프로젝트 수</span>
+                            <span class="stat-value">8개 완성 (게임, 웹사이트)</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">기술 스택</span>
+                            <span class="stat-value">HTML, CSS, JavaScript</span>
+                        </div>
+                        <div class="career-stat-item">
+                            <span class="stat-label">특징</span>
+                            <span class="stat-value">반응형 디자인, 사용자 경험 중심</span>
                         </div>
                     </div>
                 </div>
@@ -1290,87 +1278,28 @@
                         <div class="skill-progress" style="width: 70%;"></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- 상세 역량 -->
-            <h3 class="competencies-divider">상세 역량</h3>
-            <div class="competencies-container">
-                <div class="competency-item">
-                    <div class="competency-header" onclick="toggleCompetency(this)">
-                        <div class="competency-title-wrapper">
-                            <span class="competency-icon">💻</span>
-                            <h3 class="competency-title">개발자 관점 이해 및 QA의 중요성 깨달음</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="competency-content">
-                        <p>Unity로 게임을 개발하고 다양한 웹 프로젝트를 진행하며 개발의 어려움을 직접 경험했습니다. 특히 그래픽 에셋이 적용되지 않아 화면이 핑크색으로 나타났을 때, 원인을 찾느라 여러 시간을 소비했습니다. 그래픽 파이프라인 설정과 에셋 임포트 과정에 문제가 있었는데, 원인을 파악하고 나니 수정은 금방이었습니다.</p>
-                        <p>이런 경험을 여러 번 겪으며, QA가 결함을 빠르게 찾아내고 검증하는 것이 개발 효율성과 제품 품질에 중요하다는 것을 깨달았습니다. 아무리 해도 버그 원인을 모를 때가 힘들었고, 원인과 해결책을 찾았을 때 즐거웠습니다. 이 경험은 QA가 단순히 버그를 찾는 역할이 아니라 개발 프로세스 전체를 지원하는 핵심 역할이라는 것을 이해하게 해주었습니다. 또한 개발자의 관점에서 생각할 수 있게 되어, QA로서 개발팀과 효과적으로 소통하고 협업할 수 있는 기반이 되었습니다.</p>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">🎮</div>
+                    <div class="skill-name">Game Understanding</div>
+                    <div class="skill-description">다양한 장르 깊이 이해</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 92%;"></div>
                     </div>
                 </div>
-
-                <div class="competency-item">
-                    <div class="competency-header" onclick="toggleCompetency(this)">
-                        <div class="competency-title-wrapper">
-                            <span class="competency-icon">🎯</span>
-                            <h3 class="competency-title">게임 시스템 분석 및 피드백 능력</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="competency-content">
-                        <p><strong>리그 오브 레전드 (7년):</strong> 챔피언별 픽률, 밴률, 승률 데이터를 추적했습니다. 패치노트를 분석해 메타 변화를 예측하고, 라인전 타이밍과 정글 동선을 최적화하는 과정에서 데이터 기반 분석 능력을 키웠습니다.</p>
-                        <p><strong>TFT (2년, 그랜드마스터):</strong> 매 패치마다 변경되는 챔피언 능력치, 아이템 조합, 시너지 시스템을 빠르게 파악하고 최적의 덱 구성을 찾아내는 과정에서 메타 분석 능력을 키웠습니다. 확률 기반 시스템과 경제 관리를 이해하며 게임 밸런스를 깊이 있게 분석했습니다.</p>
-                        <p><strong>이터널리턴 (800시간, 미스릴):</strong> 캐릭터별 승률, 아이템 밸런스, 시즌별 변화를 추적했습니다. 배틀로얄 장르의 복잡한 밸런스 시스템을 이해했습니다.</p>
-                        <p><strong>TCG 게임 2차 알파 테스터:</strong> 게임의 재미와 밸런스를 분석하고 플레이 후 피드백 리포트를 작성했습니다. 플레이어 관점에서 문제를 발견하고 개선점을 제시하는 능력을 키웠습니다.</p>
-                        <p><strong>다양한 장르 경험:</strong> 샌드박스(테라리아, 코어키퍼), 서바이벌(Green Hell), 격투(철권), 시뮬레이션(스타듀밸리) 등을 경험하며 장르별 게임 디자인과 밸런스 방식에 대한 폭넓은 이해를 쌓았습니다.</p>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">🗾</div>
+                    <div class="skill-name">Japanese</div>
+                    <div class="skill-description">게임 코칭 가능 수준</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%;"></div>
                     </div>
                 </div>
-
-                <div class="competency-item">
-                    <div class="competency-header" onclick="toggleCompetency(this)">
-                        <div class="competency-title-wrapper">
-                            <span class="competency-icon">🤝</span>
-                            <h3 class="competency-title">체계적인 프로젝트 관리 및 의사소통 능력</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="competency-content">
-                        <p><strong>e스포츠 대회 기획 및 운영:</strong> 규정 수립, 일정 관리, 이슈 대응 등 체계적인 관리 역량을 키웠습니다. 2024년 대회에서는 기획팀장을 맡아 팀원들을 관리하며 전체 프로젝트를 조율했습니다. 팀원들과 의견을 조율하고 명확하게 소통하며 합의점을 찾아가는 경험을 쌓았습니다.</p>
-                        <p><strong>국제 게임 코칭:</strong> 일본어로 외국인 게이머들에게 리그 오브 레전드, 이터널 리턴, TFT 등의 게임 코칭을 제공했습니다. 언어와 문화의 장벽을 넘어 게임 메커니즘과 전략을 설명하고 소통하며 사회성을 길렀습니다.</p>
-                        <p><strong>박람회 및 교육행사:</strong> 다양한 연령대의 방문객을 응대하며 각 대상에 맞춰 설명하는 방법을 배웠고, 현장에서 직접 유저 반응을 관찰하고 피드백을 수집하며 유저 관점에서 문제를 파악하는 능력을 키웠습니다.</p>
-                        <p><strong>e스포츠 방송 해설:</strong> 실시간으로 게임 상황을 분석하고 명확하게 전달하는 능력을 향상시켰습니다.</p>
-                        <p>이러한 경험들은 개발, 운영, 유저 응대 등 게임 산업 전반을 이해하는 넓은 시야와 다양한 배경을 가진 사람들과 효과적으로 의사소통하는 능력을 길러주었습니다.</p>
-                    </div>
-                </div>
-
-                <div class="competency-item">
-                    <div class="competency-header" onclick="toggleCompetency(this)">
-                        <div class="competency-title-wrapper">
-                            <span class="competency-icon">⚙️</span>
-                            <h3 class="competency-title">하드웨어 및 소프트웨어에 대한 기술적 이해</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="competency-content">
-                        <p><strong>방송 장비 운영:</strong> OBS, 마이크, 오디오 인터페이스, 스위처, 카메라 등 다양한 방송 장비를 세팅하고 운영했습니다. 장비 간 호환성 문제나 신호 처리 오류가 발생했을 때 원인을 파악하고 해결하는 경험을 쌓았습니다.</p>
-                        <p><strong>소프트웨어 커스터마이징:</strong> 해외 방송 자료를 찾아 학과 방송 환경에 맞게 커스터마이징하며 OBS 플러그인 설정, 오디오, 화면 레이아웃 구성 등을 직접 수정하여 시청 품질을 개선했습니다.</p>
-                        <p><strong>하드웨어 전문성:</strong> 게이밍 기어에 대한 높은 이해도를 바탕으로 컴퓨터 조립, 문제 진단, 수리 경험을 쌓았습니다. 키보드 커스터마이징과 음향기기에 대한 지식도 보유하고 있습니다.</p>
-                        <p><strong>개발 환경 구축:</strong> 게임 개발과 웹 프로젝트를 진행하며 그래픽 카드 설정, 메모리 관리, 빌드 환경 구성 등 개발 환경을 직접 세팅하며 소프트웨어와 하드웨어의 상호작용을 이해했습니다.</p>
-                        <p>이런 경험은 QA 업무에서 테스트 환경을 구축하거나, 하드웨어 관련 버그를 재현하고 분석할 때 도움이 될 것입니다.</p>
-                    </div>
-                </div>
-
-                <div class="competency-item">
-                    <div class="competency-header" onclick="toggleCompetency(this)">
-                        <div class="competency-title-wrapper">
-                            <span class="competency-icon">📜</span>
-                            <h3 class="competency-title">ISTQB CTFL 자격증을 통한 이론적 기반</h3>
-                        </div>
-                        <span class="toggle-icon">▼</span>
-                    </div>
-                    <div class="competency-content">
-                        <p>QA로서의 전문성을 체계적으로 쌓기 위해 ISTQB CTFL 자격증을 취득했습니다. 테스트 설계, 버그 리포트 작성, 기능 검증 등 QA의 기본 원칙을 학습하며 이론적 기반을 다졌습니다.</p>
-                        <p>실무 경험과 이론적 지식을 결합하여 체계적이고 효과적인 테스트 전략을 수립할 수 있습니다.</p>
+                <div class="skill-card">
+                    <div class="skill-icon-wrapper">⚙️</div>
+                    <div class="skill-name">Tech Knowledge</div>
+                    <div class="skill-description">하드웨어/소프트웨어</div>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 78%;"></div>
                     </div>
                 </div>
             </div>
@@ -1527,8 +1456,8 @@
                             <span class="tech-tag">PeerJS</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://park0838.github.io/multiplayer-drawing/" class="project-link" target="_blank">Live Demo</a>
-                            <a href="https://github.com/park0838/multiplayer-drawing" class="project-link" target="_blank">GitHub</a>
+                            <a href="https://park0838.github.io/game/" class="project-link" target="_blank">Live Demo</a>
+                            <a href="https://github.com/park0838/game" class="project-link" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1583,6 +1512,25 @@
     <footer>
         <p>&copy; 2024 박준서. All rights reserved.</p>
         <p id="refreshTrigger" style="cursor: pointer;" title="클릭하여 최신 버전 확인">국제대학교 e스포츠과 | ISTQB CTFL | 평택시 창업경진대회 동상</p>
+
+        <div class="footer-social-links">
+            <a href="mailto:park083800@gmail.com" class="footer-social-link" title="이메일">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/park0838" class="footer-social-link" target="_blank" title="GitHub">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://discord.com/users/402812191218073600" class="footer-social-link" target="_blank" title="Discord">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+            </a>
+        </div>
+
         <p class="build-version">Build v1.0.0 • 9230291 • <span id="loadTime"></span></p>
     </footer>
 
@@ -1634,12 +1582,6 @@
             event.preventDefault();
             alert('메시지가 전송되었습니다!');
             event.target.reset();
-        }
-
-        // 핵심 역량 아코디언 토글
-        function toggleCompetency(header) {
-            const item = header.parentElement;
-            item.classList.toggle('active');
         }
 
         // 빌드 버전 확인 기능
