@@ -91,6 +91,26 @@ a:hover {
     border-bottom: 1px solid var(--rule);
 }
 
+.top-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.print-btn {
+    font: inherit;
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.print-btn:hover {
+    color: var(--ink);
+}
+
 .wordmark {
     font-family: var(--serif);
     font-weight: 900;
@@ -115,7 +135,6 @@ a:hover {
 }
 
 .theme-toggle {
-    margin-left: auto;
     font: inherit;
     font-size: 0.85rem;
     color: var(--ink-3);
@@ -135,12 +154,42 @@ main {
     padding: 0 var(--gutter);
 }
 
+/* --- 문서 정보 --- */
+.doc-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 2.5rem;
+    border: 1px solid var(--ink);
+}
+
+.doc-meta div {
+    padding: 0.55rem 0.9rem 0.6rem;
+    border-left: 1px solid var(--rule-strong);
+}
+
+.doc-meta div:first-child {
+    border-left: 0;
+}
+
+.doc-meta dt {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-3);
+}
+
+.doc-meta dd {
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
 /* --- 소개 --- */
 .intro {
     display: grid;
     grid-template-columns: 11rem minmax(0, 1fr);
     gap: 2rem;
-    padding: 4.5rem 0 4rem;
+    padding: 3.5rem 0 4rem;
 }
 
 .portrait {
@@ -213,6 +262,15 @@ main {
     font-weight: 600;
     font-size: 1.35rem;
     line-height: 1.3;
+}
+
+.sec-no {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
 }
 
 .block-lead {
@@ -292,6 +350,70 @@ table {
     color: var(--ink-2);
 }
 
+.table-note {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    margin-bottom: 0.75rem;
+}
+
+.severity {
+    border-top: 1px solid var(--ink);
+}
+
+.severity thead th {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink-3);
+    text-align: left;
+    padding: 0.5rem 1rem 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.severity tbody th,
+.severity td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.6rem 1rem 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.severity tbody th {
+    width: 9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.severity td {
+    color: var(--ink-2);
+}
+
+.severity td:last-child {
+    color: var(--ink-3);
+    font-size: 0.9rem;
+}
+
+.severity .en {
+    display: block;
+    margin-left: 1.15rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--ink-3);
+}
+
+.sev {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.55rem;
+    vertical-align: 0.05em;
+}
+
+.sev-1 { background: #b4361f; }
+.sev-2 { background: #d7702c; }
+.sev-3 { background: #c9a227; }
+.sev-4 { background: var(--rule-strong); }
+
 /* 인디게임 */
 .game {
     display: grid;
@@ -341,20 +463,47 @@ table {
     color: var(--ink-2);
 }
 
-.focus-title {
+/* 테스트 항목 표 */
+.cases {
     margin-top: 1.1rem;
     font-size: 0.9rem;
+}
+
+.cases caption {
+    text-align: left;
     font-weight: 600;
-    color: var(--ink) !important;
+    font-size: 0.9rem;
+    padding-bottom: 0.4rem;
 }
 
-.focus {
-    padding-left: 1.1rem;
-    color: var(--ink-2);
-    font-size: 0.95rem;
+.cases th,
+.cases td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.45rem 0.75rem 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
 }
 
-.focus li::marker {
+.cases thead th {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--ink);
+}
+
+.cases td:first-child {
+    width: 4.5rem;
+}
+
+.cases td:last-child {
+    width: 5.5rem;
+    color: var(--ink-3);
+    padding-right: 0;
+}
+
+.tc-id {
+    font-family: var(--mono);
+    font-size: 0.8rem;
     color: var(--accent);
 }
 
@@ -492,6 +641,32 @@ footer {
         width: 8rem;
     }
 
+    .doc-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 1.5rem;
+    }
+
+    .doc-meta div:nth-child(3) {
+        border-left: 0;
+    }
+
+    .doc-meta div:nth-child(n + 3) {
+        border-top: 1px solid var(--rule-strong);
+    }
+
+    .severity td:last-child,
+    .severity th:last-child {
+        display: none;
+    }
+
+    .severity tbody th {
+        width: 6.5rem;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
     .history li {
         grid-template-columns: 1fr;
         gap: 0.1rem;
@@ -500,6 +675,82 @@ footer {
     .records th:nth-child(3),
     .records td:nth-child(3) {
         display: none;
+    }
+}
+
+/* --- 인쇄 / PDF 저장 --- */
+@media print {
+    @page {
+        size: A4;
+        margin: 16mm 14mm;
+    }
+
+    :root,
+    :root[data-theme="dark"] {
+        --paper: #ffffff;
+        --ink: #111111;
+        --ink-2: #333333;
+        --ink-3: #666666;
+        --rule: #cccccc;
+        --rule-strong: #999999;
+        --accent: #b4361f;
+    }
+
+    body {
+        font-size: 10pt;
+        line-height: 1.55;
+    }
+
+    .top nav,
+    .top-actions,
+    .skip-link,
+    footer {
+        display: none;
+    }
+
+    .top {
+        padding: 0 0 0.5rem;
+    }
+
+    main {
+        padding: 0;
+        max-width: none;
+    }
+
+    .intro {
+        padding: 1.5rem 0;
+    }
+
+    .intro h1 {
+        font-size: 30pt;
+    }
+
+    .intro,
+    .block {
+        grid-template-columns: 7rem minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .block {
+        padding: 1.25rem 0;
+        break-inside: auto;
+    }
+
+    .block h2,
+    h3,
+    tr,
+    .docs li,
+    .history li,
+    .game {
+        break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .mail {
+        font-size: 16pt;
     }
 }
 
