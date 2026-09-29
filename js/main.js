@@ -34,6 +34,7 @@
 
     function setMenu(open) {
         navMenu.classList.toggle('open', open);
+        document.querySelector('.site-nav').classList.toggle('menu-open', open);
         navToggle.setAttribute('aria-expanded', String(open));
         navToggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
     }
@@ -84,6 +85,27 @@
             img.addEventListener('load', ok);
         }
     });
+
+    // --- 스크롤 시 내비게이션 경계선 ---
+    var nav = document.querySelector('.site-nav');
+    function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // --- 스크롤 등장 효과 ---
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        var revealer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('in');
+                revealer.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach(function (el) { revealer.observe(el); });
+    } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+    }
 
     // --- 푸터 연도 ---
     var year = document.getElementById('year');
