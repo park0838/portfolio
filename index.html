@@ -3,331 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박준서 - 게임 QA 포트폴리오</title>
-    <meta name="description" content="게임 QA 테스터 박준서의 포트폴리오. ISTQB CTFL v4.0, 직접 개발한 Unity 인디게임 2종의 테스트 기록, 경쟁 게임 경험을 소개합니다.">
-    <meta property="og:title" content="박준서 - 게임 QA 포트폴리오">
+    <title>박준서 · 게임 QA 포트폴리오</title>
+    <meta name="description" content="게임 QA 테스터를 지망하는 박준서의 포트폴리오. ISTQB CTFL v4.0, Unity로 직접 만든 게임 2종의 테스트 기록, 경쟁 게임 경험.">
+    <meta property="og:title" content="박준서 · 게임 QA 포트폴리오">
     <meta property="og:description" content="ISTQB CTFL v4.0 · Unity 인디게임 테스트 · 게임 QA 테스터 지망">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b4361f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='18' font-weight='700' text-anchor='middle' fill='%23f5f3ee'%3E박%3C/text%3E%3C/svg%3E">
     <script>
-        // 첫 페인트 전에 테마를 적용해 깜빡임을 막습니다.
         (function () {
             var theme = null;
             try { theme = localStorage.getItem('theme'); } catch (e) {}
-            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                theme = 'dark';
-            }
+            if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
             if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
         })();
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@600;900&display=swap">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
 
-    <header class="site-nav">
-        <nav class="nav-inner" aria-label="주 메뉴">
-            <a href="#home" class="logo">J.S Park</a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#qa-work">QA Work</a></li>
-                <li><a href="#games">Indie Games</a></li>
-                <li><a href="#experience">Game Experience</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="nav-theme"><button class="icon-btn theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="icon-btn theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
-                <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navMenu">☰</button>
-            </div>
+    <header class="top">
+        <a href="#main" class="wordmark">박준서</a>
+        <nav aria-label="주 메뉴">
+            <a href="#qa-work">QA 작업</a>
+            <a href="#games">인디게임</a>
+            <a href="#experience">게임 경력</a>
+            <a href="#activities">활동</a>
+            <a href="#contact">연락</a>
         </nav>
+        <div class="top-actions">
+            <button class="print-btn" type="button">PDF로 저장</button>
+            <button class="theme-toggle" type="button">다크 모드</button>
+        </div>
     </header>
 
     <main id="main">
-        <!-- Hero -->
-        <section id="home" class="hero">
-            <div>
-                <p class="hero-eyebrow">Portfolio</p>
+        <!-- 소개 -->
+        <dl class="doc-meta">
+            <div><dt>문서</dt><dd>게임 QA 포트폴리오</dd></div>
+            <div><dt>작성</dt><dd>박준서</dd></div>
+            <div><dt>대상 직무</dt><dd>게임 QA 테스터</dd></div>
+            <div><dt>최종 수정</dt><dd><time id="updated" datetime="2026-09-29">2026-09-29</time></dd></div>
+        </dl>
+
+        <section class="intro">
+            <img class="portrait" src="profile.jpeg" alt="박준서 프로필 사진" width="132" height="132" fetchpriority="high">
+            <div class="intro-text">
+                <p class="role">게임 QA 테스터 지망</p>
                 <h1>박준서</h1>
-                <p class="hero-role">Game QA Tester</p>
-                <div class="chips">
-                    <span class="chip">ISTQB CTFL v4.0</span>
-                    <span class="chip">Unity 인디게임 2종 테스트</span>
-                    <span class="chip">LoL 마스터 · TFT 챌린저</span>
-                    <span class="chip">일본어 코칭 경험</span>
-                </div>
-                <div class="btn-row">
-                    <a href="#qa-work" class="btn btn-light">QA Work 보기</a>
-                    <a href="#contact" class="btn btn-ghost">연락하기</a>
-                </div>
+                <p class="lead">
+                    경쟁 게임을 7년 동안 깊게 플레이했고, Unity로 직접 만든 게임 두 개를 테스트하며 버그를 고쳐 왔습니다.
+                    ISTQB CTFL v4.0으로 테스트 이론을 정리했습니다. 개발팀이 바로 재현하고 고칠 수 있는 리포트를 쓰는 것이 목표입니다.
+                </p>
+                <dl class="facts">
+                    <div><dt>자격</dt><dd>ISTQB CTFL v4.0</dd></div>
+                    <div><dt>학력</dt><dd>국제대학교 e스포츠과 졸업</dd></div>
+                    <div><dt>수상</dt><dd>평택시 청년창업지원센터 창업경진대회 동상</dd></div>
+                    <div><dt>언어</dt><dd>한국어, 일본어(게임 코칭 경험)</dd></div>
+                </dl>
+                <p class="intro-links">
+                    <a href="mailto:park083800@gmail.com">park083800@gmail.com</a>
+                    <a href="https://github.com/park0838" target="_blank" rel="noopener">GitHub</a>
+                </p>
             </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="alt">
-            <div class="container">
-                <h2 class="section-title">About</h2>
-                <p class="section-sub">플레이어의 시선과 개발자의 시선으로 게임의 문제를 찾습니다.</p>
-                <div class="about-wrap">
-                    <img src="profile.jpeg" alt="박준서 프로필 사진" width="240" height="240">
-                    <div>
-                        <h3>안녕하세요, 게임 QA 테스터 박준서입니다</h3>
-                        <p>
-                            7년간 경쟁 게임을 플레이하며 패치와 메타의 변화를 분석해 왔고,
-                            Unity로 직접 게임을 기획·개발하면서 버그를 찾고 고치는 과정을 개발자 입장에서 경험했습니다.
-                            ISTQB CTFL v4.0으로 테스트 이론을 정리했고, 재현 조건을 정확히 기록해
-                            개발팀이 바로 수정할 수 있는 리포트를 쓰는 것을 목표로 합니다.
-                        </p>
-                        <div class="facts">
-                            <div class="fact"><strong>ISTQB CTFL v4.0</strong><span>Certified Tester Foundation Level</span></div>
-                            <div class="fact"><strong>창업경진대회 동상</strong><span>평택시 청년창업지원센터</span></div>
-                            <div class="fact"><strong>국제대학교 e스포츠과</strong><span>졸업</span></div>
-                        </div>
-                    </div>
-                </div>
+        <!-- QA 작업 -->
+        <section id="qa-work" class="block">
+            <h2><span class="sec-no">1</span>QA 작업</h2>
+            <div class="block-body">
+                <p class="block-lead">직접 만든 게임을 대상으로 한 테스트 문서입니다. 작성이 끝나는 대로 여기에 올립니다.</p>
 
-                <div class="grid grid-4" style="margin-top: 2rem;">
-                    <div class="card">
-                        <h3>테스트 이론</h3>
-                        <p>ISTQB CTFL v4.0 기반으로 테스트 설계와 버그 리포트 작성의 기본 원칙을 학습했습니다.</p>
-                    </div>
-                    <div class="card">
-                        <h3>직접 만든 게임 테스트</h3>
-                        <p>Unity 인디게임 2종을 기획·개발하고 반복해서 테스트하며 버그를 수정했습니다.</p>
-                    </div>
-                    <div class="card">
-                        <h3>넓은 게임 이해</h3>
-                        <p>경쟁 게임(LoL, TFT, 이터널리턴)과 콘솔 게임(테라리아, Green Hell, 철권 등)을 다양하게 플레이했습니다.</p>
-                    </div>
-                    <div class="card">
-                        <h3>협업과 소통</h3>
-                        <p>대회 기획팀장, 방송 기술팀장, 일본어 게임 코칭으로 다양한 사람과 조율하고 설명해 왔습니다.</p>
-                    </div>
-                </div>
+                <ul class="docs">
+                    <li>
+                        <div>
+                            <h3>버그 리포트</h3>
+                            <p>JumpKing과 Amorupari에서 발견하고 수정한 버그. 재현 절차, 기대/실제 결과, 원인과 수정 내용.</p>
+                        </div>
+                        <span class="state">작성 중</span>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>테스트 케이스</h3>
+                            <p>기능, 물리·충돌, 조작감, UX로 나눈 케이스와 실행 결과.</p>
+                        </div>
+                        <span class="state">작성 중</span>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>테스트 계획서</h3>
+                            <p>게임별 테스트 범위, 환경, 우선순위, 일정.</p>
+                        </div>
+                        <span class="state">작성 중</span>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>비공개 게임 알파 테스트</h3>
+                            <p>비공개 게임의 알파 테스트에 참여해 밸런스 등을 검증하고 피드백 리포트를 작성했습니다.
+                            계약상 게임 이름과 상세 내용은 공개할 수 없고, 참여 증빙은 요청하시면 보여 드릴 수 있습니다.</p>
+                        </div>
+                        <span class="state state-done">참여</span>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>캡스톤 연구: 게임 내 비매너 행위가 플레이어 경험에 미치는 영향과 개선 전략</h3>
+                            <p>틸트를 유발하는 게임 구조를 분석하고, 사후 처벌보다 사전 환경 설계로 대응하자고 제안한 연구입니다.</p>
+                        </div>
+                        <span class="state state-done">완료</span>
+                    </li>
+                </ul>
+
+                <h3 class="table-title">버그 리포트 양식</h3>
+                <table class="spec">
+                    <tbody>
+                        <tr><th scope="row">제목</th><td>증상을 한 줄로 요약</td></tr>
+                        <tr><th scope="row">환경</th><td>기기, OS, 게임 버전(빌드)</td></tr>
+                        <tr><th scope="row">심각도 / 우선순위</th><td>플레이 진행에 미치는 영향과 수정 우선순위</td></tr>
+                        <tr><th scope="row">재현 절차</th><td>번호를 매긴 단계별 절차</td></tr>
+                        <tr><th scope="row">기대 결과 / 실제 결과</th><td>의도된 동작과 실제 동작의 차이</td></tr>
+                        <tr><th scope="row">재현율</th><td>N회 시도 중 M회 재현</td></tr>
+                        <tr><th scope="row">첨부</th><td>스크린샷, 재현 영상, 로그</td></tr>
+                        <tr><th scope="row">원인 및 수정</th><td>원인과 수정 방법, 수정 후 확인 결과</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="table-title">심각도 기준</h3>
+                <p class="table-note">리포트에 등급을 매길 때 쓰는 기준입니다. 예시는 이해를 돕기 위한 가상의 사례입니다.</p>
+                <table class="severity">
+                    <thead>
+                        <tr><th scope="col">등급</th><th scope="col">기준</th><th scope="col">예시</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row"><span class="sev sev-1"></span>치명 <span class="en">Critical</span></th><td>게임이 종료되거나 진행이 불가능함, 데이터 손실</td><td>클리어 직전 크래시, 세이브 파일 손상</td></tr>
+                        <tr><th scope="row"><span class="sev sev-2"></span>높음 <span class="en">Major</span></th><td>핵심 기능이 잘못 동작하지만 우회할 수 있음</td><td>특정 벽에서 캐릭터가 끼여 재시작해야 함</td></tr>
+                        <tr><th scope="row"><span class="sev sev-3"></span>보통 <span class="en">Minor</span></th><td>일부 기능 이상, 플레이 흐름에는 큰 영향 없음</td><td>기록 표시가 한 프레임 늦게 갱신됨</td></tr>
+                        <tr><th scope="row"><span class="sev sev-4"></span>낮음 <span class="en">Trivial</span></th><td>외관상 문제, 오탈자</td><td>UI 텍스트 줄바꿈 어긋남</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <!-- QA Work -->
-        <section id="qa-work">
-            <div class="container">
-                <h2 class="section-title">QA Work</h2>
-                <p class="section-sub">직접 만든 게임을 대상으로 작성한 테스트 문서와 버그 리포트입니다.</p>
+        <!-- 인디게임 -->
+        <section id="games" class="block">
+            <h2><span class="sec-no">2</span>인디게임</h2>
+            <div class="block-body">
+                <p class="block-lead">Unity로 기획하고 만든 게임입니다. 만드는 동안 직접 테스트하면서 버그를 찾고 고쳤습니다.</p>
 
-                <div class="grid grid-3">
-                    <article class="card">
-                        <span class="badge badge-todo" data-todo="버그 리포트 공개 후 삭제">준비 중</span>
-                        <h3>버그 리포트</h3>
-                        <div class="media is-missing" data-label="버그 리포트 예시 캡처&#10;images/qa-bug-report.webp">
-                            <img src="images/qa-bug-report.webp" alt="버그 리포트 예시 화면" loading="lazy">
-                        </div>
-                        <p>JumpKing과 Amorupari에서 발견하고 수정한 버그를 재현 절차, 기대/실제 결과, 원인과 수정 내용으로 정리합니다.</p>
-                    </article>
-                    <article class="card">
-                        <span class="badge badge-todo" data-todo="테스트 케이스 공개 후 삭제">준비 중</span>
-                        <h3>테스트 케이스</h3>
-                        <div class="media is-missing" data-label="테스트 케이스 시트 캡처&#10;images/qa-test-case.webp">
-                            <img src="images/qa-test-case.webp" alt="테스트 케이스 시트 화면" loading="lazy">
-                        </div>
-                        <p>기능, 물리·충돌, 조작감, UX 항목으로 나눈 테스트 케이스와 실행 결과를 공개합니다.</p>
-                    </article>
-                    <article class="card">
-                        <span class="badge badge-todo" data-todo="테스트 계획서 공개 후 삭제">준비 중</span>
-                        <h3>테스트 계획서</h3>
-                        <div class="media is-missing" data-label="테스트 계획서 첫 페이지 캡처&#10;images/qa-test-plan.webp">
-                            <img src="images/qa-test-plan.webp" alt="테스트 계획서 첫 페이지" loading="lazy">
-                        </div>
-                        <p>테스트 범위, 환경, 우선순위, 일정을 담은 계획서를 게임별로 작성합니다.</p>
-                    </article>
-                </div>
-
-                <div class="grid grid-2" style="margin-top: 1.5rem;">
-                    <article class="card">
-                        <h3>비공개 게임 알파 테스트 참여</h3>
-                        <p>비공개 게임 알파 테스트에 참여해 게임을 플레이하며 밸런스 등을 검증하고 피드백 리포트를 작성했습니다.
-                        계약상 게임 이름과 상세 내용은 공개할 수 없으며, 참여 증빙은 요청 시 제시할 수 있습니다.</p>
-                    </article>
-                    <article class="card">
-                        <span class="badge badge-todo" data-todo="캡스톤 요약/링크 추가 후 삭제">요약·링크 준비 중</span>
-                        <h3>캡스톤 디자인 연구</h3>
-                        <p>「게임 내 비매너 행위가 플레이어 경험에 미치는 영향과 개선 전략」: 틸트를 유발하는 게임 구조를 분석하고
-                        사후 처벌이 아닌 사전 환경 설계를 제안한 연구입니다.</p>
-                    </article>
-                </div>
-
-                <div class="report-format">
-                    <h3>버그 리포트 작성 양식</h3>
-                    <dl>
-                        <dt>제목</dt><dd>증상을 한 줄로 요약</dd>
-                        <dt>환경</dt><dd>기기, OS, 게임 버전(빌드)</dd>
-                        <dt>심각도 / 우선순위</dt><dd>플레이 진행에 미치는 영향과 수정 우선순위</dd>
-                        <dt>재현 절차</dt><dd>번호를 매긴 단계별 절차</dd>
-                        <dt>기대 결과 / 실제 결과</dt><dd>의도된 동작과 실제 동작의 차이</dd>
-                        <dt>재현율</dt><dd>N회 시도 중 M회 재현</dd>
-                        <dt>첨부</dt><dd>스크린샷, 재현 영상, 로그</dd>
-                        <dt>원인 및 수정</dt><dd>알고 있는 경우 원인과 수정 방법, 수정 후 확인 결과</dd>
-                    </dl>
-                </div>
-            </div>
-        </section>
-
-        <!-- Indie Games -->
-        <section id="games" class="alt">
-            <div class="container">
-                <h2 class="section-title">Indie Games</h2>
-                <p class="section-sub">Unity로 직접 기획·개발하고, 직접 테스트하며 다듬은 게임입니다.</p>
-                <div class="grid grid-2">
-                    <article class="card game-card">
-                        <div class="media is-missing" data-label="JumpKing 대표 스크린샷&#10;images/jumpking-cover.webp">
-                            <img src="images/jumpking-cover.webp" alt="JumpKing 게임 화면" loading="lazy">
-                        </div>
+                <article class="game">
+                    <figure class="shot">
+                        <img src="images/jumpking-cover.webp" alt="JumpKing 플레이 화면" onerror="this.closest('figure').remove()">
+                    </figure>
+                    <div class="game-text">
                         <h3>JumpKing</h3>
-                        <p>점프킹 스타일의 플랫폼 게임을 모작한 프로젝트입니다.</p>
-                        <div class="tags"><span class="tag">Unity</span><span class="tag">Windows</span><span class="tag">2D 플랫포머</span></div>
-                        <h4>테스트 관점</h4>
-                        <ul>
-                            <li>점프 거리와 높이의 일관성</li>
-                            <li>벽·모서리에서의 끼임과 충돌 판정</li>
-                            <li>낙하 구간과 체크포인트 동작</li>
-                        </ul>
-                        <div class="btn-row">
-                            <span class="btn btn-disabled" data-todo="빌드 링크 추가 후 a 태그로 교체">빌드 다운로드 (준비 중)</span>
-                        </div>
-                    </article>
-                    <article class="card game-card">
-                        <div class="media is-missing" data-label="Amorupari 대표 스크린샷&#10;images/amorupari-cover.webp">
-                            <img src="images/amorupari-cover.webp" alt="Amorupari 게임 화면" loading="lazy">
-                        </div>
-                        <h3>Amorupari (아모르파티)</h3>
+                        <p class="game-meta">Unity · Windows · 2D 플랫포머</p>
+                        <p>점프킹 스타일의 플랫폼 게임을 따라 만든 프로젝트입니다.</p>
+                        <table class="cases">
+                            <caption>테스트 항목</caption>
+                            <thead><tr><th scope="col">ID</th><th scope="col">확인 내용</th><th scope="col">분류</th></tr></thead>
+                            <tbody>
+                                <tr><td class="tc-id">JK-01</td><td>점프 거리와 높이가 매번 같은지</td><td>물리</td></tr>
+                                <tr><td class="tc-id">JK-02</td><td>벽과 모서리에서 끼이거나 판정이 어긋나지 않는지</td><td>충돌</td></tr>
+                                <tr><td class="tc-id">JK-03</td><td>낙하 구간과 체크포인트가 의도대로 동작하는지</td><td>기능</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="build">빌드 공개 준비 중</p>
+                    </div>
+                </article>
+
+                <article class="game">
+                    <figure class="shot">
+                        <img src="images/amorupari-cover.webp" alt="Amorupari 플레이 화면" onerror="this.closest('figure').remove()">
+                    </figure>
+                    <div class="game-text">
+                        <h3>Amorupari <span lang="ko">(아모르파티)</span></h3>
+                        <p class="game-meta">Unity · Windows · 3D 3인칭 타임어택</p>
                         <p>직접 기획한 3D 3인칭 타임어택 게임입니다.</p>
-                        <div class="tags"><span class="tag">Unity</span><span class="tag">Windows</span><span class="tag">3D · 3인칭</span><span class="tag">타임어택</span></div>
-                        <h4>테스트 관점</h4>
-                        <ul>
-                            <li>카메라 동작과 조작감</li>
-                            <li>타이머 정확도와 기록 저장</li>
-                            <li>지형 끼임과 맵 이탈</li>
-                        </ul>
-                        <div class="btn-row">
-                            <span class="btn btn-disabled" data-todo="빌드 링크 추가 후 a 태그로 교체">빌드 다운로드 (준비 중)</span>
-                        </div>
-                    </article>
-                </div>
+                        <table class="cases">
+                            <caption>테스트 항목</caption>
+                            <thead><tr><th scope="col">ID</th><th scope="col">확인 내용</th><th scope="col">분류</th></tr></thead>
+                            <tbody>
+                                <tr><td class="tc-id">AP-01</td><td>카메라 움직임과 조작감</td><td>조작/UX</td></tr>
+                                <tr><td class="tc-id">AP-02</td><td>타이머 정확도와 기록 저장</td><td>기능</td></tr>
+                                <tr><td class="tc-id">AP-03</td><td>지형에 끼이거나 맵 밖으로 나가지 않는지</td><td>충돌</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="build">빌드 공개 준비 중</p>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Game Experience -->
-        <section id="experience">
-            <div class="container">
-                <h2 class="section-title">Game Experience</h2>
-                <p class="section-sub">패치노트와 메타의 변화를 읽고, 시스템을 이해하며 플레이해 왔습니다.</p>
-                <div class="grid grid-4">
-                    <article class="card xp-card">
-                        <div class="icon" aria-hidden="true">🏆</div>
-                        <h3>리그 오브 레전드</h3>
-                        <div class="rank">마스터</div>
-                        <div class="meta">약 7년 플레이</div>
-                        <p><a href="https://www.op.gg/summoners/kr/musk%20park-musk" target="_blank" rel="noopener">musk park#musk</a></p>
-                    </article>
-                    <article class="card xp-card">
-                        <div class="icon" aria-hidden="true">♟️</div>
-                        <h3>TFT</h3>
-                        <div class="rank">챌린저</div>
-                        <div class="meta">약 2년 플레이</div>
-                        <p><a href="https://lolchess.gg/profile/kr/musk%20park-musk" target="_blank" rel="noopener">musk park#musk</a></p>
-                    </article>
-                    <article class="card xp-card">
-                        <div class="icon" aria-hidden="true">⚔️</div>
-                        <h3>이터널리턴</h3>
-                        <div class="rank">미스릴</div>
-                        <div class="meta">약 800시간 · 프리시즌 상위 200위</div>
-                        <p><a href="https://dak.gg/er/players/%EC%BD%94%EC%BD%B0%EC%BD%9C%EB%9D%BC" target="_blank" rel="noopener">코콰콜라</a></p>
-                    </article>
-                    <article class="card xp-card">
-                        <div class="icon" aria-hidden="true">🃏</div>
-                        <h3>섀도우버스</h3>
-                        <div class="rank">상위 랭크</div>
-                        <div class="meta">약 200시간 플레이</div>
-                    </article>
-                </div>
-                <div class="card" style="margin-top: 1.5rem;">
-                    <h3>콘솔·컨트롤러 게임</h3>
-                    <p>게임패드로 테라리아, Green Hell, 철권, 스타듀밸리, 코어키퍼를 플레이하며
-                    샌드박스·서바이벌·격투·시뮬레이션 장르와 키보드·마우스와 다른 조작 방식을 경험했습니다.</p>
-                </div>
+        <!-- 게임 경력 -->
+        <section id="experience" class="block">
+            <h2><span class="sec-no">3</span>게임 경력</h2>
+            <div class="block-body">
+                <p class="block-lead">패치노트와 메타 변화를 따라가며 플레이했습니다.</p>
+                <table class="records">
+                    <thead>
+                        <tr><th scope="col">게임</th><th scope="col">최고 티어</th><th scope="col">플레이</th><th scope="col">전적</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>리그 오브 레전드</td><td class="tier">마스터</td><td>약 7년</td><td><a href="https://www.op.gg/summoners/kr/musk%20park-musk" target="_blank" rel="noopener">op.gg</a></td></tr>
+                        <tr><td>TFT</td><td class="tier">챌린저</td><td>약 2년</td><td><a href="https://lolchess.gg/profile/kr/musk%20park-musk" target="_blank" rel="noopener">lolchess.gg</a></td></tr>
+                        <tr><td>이터널리턴</td><td class="tier">미스릴 <small>프리시즌 상위 200위</small></td><td>약 800시간</td><td><a href="https://dak.gg/er/players/%EC%BD%94%EC%BD%B0%EC%BD%9C%EB%9D%BC" target="_blank" rel="noopener">dak.gg</a></td></tr>
+                        <tr><td>섀도우버스</td><td class="tier">상위 랭크</td><td>약 200시간</td><td>—</td></tr>
+                    </tbody>
+                </table>
+                <p class="note">게임패드로는 테라리아, Green Hell, 철권, 스타듀밸리, 코어키퍼를 플레이했습니다.</p>
             </div>
         </section>
 
-        <!-- Activities -->
-        <section id="activities" class="alt">
-            <div class="container">
-                <h2 class="section-title">Activities</h2>
-                <p class="section-sub">대회를 기획하고 중계하며 다양한 사람들과 협업한 경험입니다.</p>
-                <ol class="timeline">
-                    <li>
-                        <span class="year">2022</span>
-                        <h3>하나원큐 '집에서 즐기는 롤 대회' 8강</h3>
-                        <p>전국 약 250개 팀이 참가한 대회에서 정글 포지션으로 8강에 진출했습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2023</span>
-                        <h3>평택시 청년창업지원센터 창업경진대회 동상</h3>
-                        <p>'AI를 활용한 정신건강상담치료 시스템' 아이디어를 기획하고 발표했습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2023</span>
-                        <h3>평택시고등학교 제2회 최강자전 기획팀</h3>
-                        <p>국제대학교 e스포츠학과가 주최한 e스포츠 대항전의 기획에 참여했습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2024</span>
-                        <h3>평택시고등학교 제3회 최강자전 기획팀장</h3>
-                        <p>대회 전체 기획과 일정 관리, 경기 규정 작성, 돌발 이슈 대응, 기획팀 의견 조율을 맡았습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2024</span>
-                        <h3>LoL 대학리그 중계팀</h3>
-                        <p>경기 상황을 실시간으로 분석하고 전달하는 중계에 참여했습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2023 – 2025</span>
-                        <h3>국제대학교 방송국 기술팀장</h3>
-                        <p>OBS, 오디오 인터페이스, 스위처, 카메라 등 방송 장비를 세팅·운영하고 문제가 생기면 원인을 찾아 해결했습니다.</p>
-                    </li>
-                    <li>
-                        <span class="year">2023 –</span>
-                        <h3>일본어 게임 코칭</h3>
-                        <p>일본어로 LoL, 이터널리턴, TFT 코칭을 진행하며 게임 메커니즘과 전략을 설명했습니다.</p>
-                    </li>
+        <!-- 활동 -->
+        <section id="activities" class="block">
+            <h2><span class="sec-no">4</span>활동</h2>
+            <div class="block-body">
+                <ol class="history">
+                    <li><time>2022</time><div><h3>하나원큐 ‘집에서 즐기는 롤 대회’ 8강</h3><p>전국 약 250개 팀 중 8강. 정글 포지션.</p></div></li>
+                    <li><time>2023</time><div><h3>평택시 청년창업지원센터 창업경진대회 동상</h3><p>‘AI를 활용한 정신건강상담치료 시스템’ 아이디어를 기획하고 발표했습니다.</p></div></li>
+                    <li><time>2023</time><div><h3>평택시고등학교 제2회 최강자전 기획팀</h3><p>국제대학교 e스포츠학과 주최 대회의 기획에 참여했습니다.</p></div></li>
+                    <li><time>2024</time><div><h3>평택시고등학교 제3회 최강자전 기획팀장</h3><p>대회 기획과 일정 관리, 경기 규정 작성, 돌발 상황 대응, 기획팀 의견 조율을 맡았습니다.</p></div></li>
+                    <li><time>2024</time><div><h3>LoL 대학리그 중계팀</h3><p>경기를 실시간으로 분석하고 전달하는 중계에 참여했습니다.</p></div></li>
+                    <li><time>2023–2025</time><div><h3>국제대학교 방송국 기술팀장</h3><p>OBS, 오디오 인터페이스, 스위처, 카메라를 세팅·운영하고, 장비 문제가 생기면 원인을 찾아 해결했습니다.</p></div></li>
+                    <li><time>2023–</time><div><h3>일본어 게임 코칭</h3><p>일본어로 LoL, 이터널리턴, TFT의 메커니즘과 전략을 설명했습니다.</p></div></li>
                 </ol>
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-sub">게임 QA 채용과 협업 문의는 이메일로 편하게 연락 주세요.</p>
-                <div class="contact-list">
-                    <a class="contact-link" href="mailto:park083800@gmail.com">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        park083800@gmail.com
-                    </a>
-                    <a class="contact-link" href="https://github.com/park0838" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        GitHub
-                    </a>
-                    <a class="contact-link" href="https://discord.com/users/402812191218073600" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                        Discord
-                    </a>
-                </div>
+        <!-- 연락 -->
+        <section id="contact" class="block">
+            <h2><span class="sec-no">5</span>연락</h2>
+            <div class="block-body">
+                <p class="block-lead">게임 QA 채용이나 협업 문의는 이메일로 보내 주세요.</p>
+                <p class="mail"><a href="mailto:park083800@gmail.com">park083800@gmail.com</a></p>
+                <p class="other-links">
+                    <a href="https://github.com/park0838" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://discord.com/users/402812191218073600" target="_blank" rel="noopener">Discord</a>
+                </p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="year">2026</span> 박준서. All rights reserved.</p>
-        <p>국제대학교 e스포츠과 졸업 · ISTQB CTFL v4.0</p>
+        <p>© <span id="year">2026</span> 박준서</p>
     </footer>
 
     <script src="js/main.js"></script>
