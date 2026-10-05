@@ -37,6 +37,43 @@
         updated.setAttribute('datetime', ymd);
     }
 
+    // --- 이메일 주소 복사 ---
+    var copyBtn = document.querySelector('.copy-btn');
+    var copyStatus = document.querySelector('.copy-status');
+    var copyTimer;
+
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+        }
+        return new Promise(function (resolve, reject) {
+            var area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.position = 'fixed';
+            area.style.opacity = '0';
+            document.body.appendChild(area);
+            area.select();
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(area);
+            if (ok) { resolve(); } else { reject(); }
+        });
+    }
+
+    if (copyBtn && copyStatus) {
+        copyBtn.addEventListener('click', function () {
+            var text = copyBtn.getAttribute('data-copy');
+            copyText(text).then(function () {
+                copyStatus.textContent = '복사했습니다.';
+            }, function () {
+                copyStatus.textContent = '복사하지 못했습니다. ' + text + ' 를 직접 선택해 주세요.';
+            });
+            clearTimeout(copyTimer);
+            copyTimer = setTimeout(function () { copyStatus.textContent = ''; }, 3000);
+        });
+    }
+
     // --- 푸터 연도 ---
     var year = document.getElementById('year');
     if (year) year.textContent = String(new Date().getFullYear());
