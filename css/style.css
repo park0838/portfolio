@@ -636,9 +636,31 @@ table {
 }
 
 .channels th {
-    width: 6rem;
+    width: 7.5rem;
     font-weight: 500;
+    color: var(--ink-2);
+    white-space: nowrap;
+}
+
+.ch-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.55rem;
+    vertical-align: -0.2em;
+    fill: currentColor;
+}
+
+.ic-mail {
     color: var(--ink-3);
+}
+
+.ic-github {
+    color: var(--ink);
+}
+
+/* Discord 공식 색 (Blurple) */
+.ic-discord {
+    color: #5865f2;
 }
 
 .channels td a {
